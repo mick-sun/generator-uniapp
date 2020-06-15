@@ -1,14 +1,18 @@
 {
   "name": "generator-uniapp",
   "version": "1.0.1",
-  "description": "uniapp cli scaffolding",
+  "description": "Yeoman generator for uniapp",
   "main": "index.js",
   "repository": "git@github.com:mick-sun/generator-uniapp.git",
   "author": "孙伟 <mick.sunwei@qq.com>",
   "license": "MIT",
   "keywords": [
-    "Yeoman",
-    "Generator",
+    "yeoman-generator",
+    "scaffold",
+    "framework",
+    "component",
+    "front-end",
+    "app",
     "uniapp",
     "Vuejs"
   ],
