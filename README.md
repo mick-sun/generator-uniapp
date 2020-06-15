@@ -119,7 +119,21 @@ yo uniapp:page my-page --route --title="my page"
 ```
 
 Produces page as above and adds a route to `src/pages.json`
-with URI `pages/my-page/my-page`
+```json
+{
+  "pages": [
+    ...
+    {
+      "path": "pages/my-page/my-page",
+      "style": {
+        "navigationBarTitleText": "my page"
+      }
+    } 
+    ...
+  ],
+  ...
+}
+```
 
 Of course, you can also specify the generated subdirectories.
 
