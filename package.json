@@ -1,0 +1,13 @@
+{
+  "name": "generator-uniapp",
+  "version": "1.0.0",
+  "description": "uniapp cli scaffolding",
+  "main": "index.js",
+  "repository": "git@github.com:mick-sun/generator-uniapp.git",
+  "author": "孙伟 <mick.sunwei@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.10.1",
+    "yosay": "^2.0.2"
+  }
+}

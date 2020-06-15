@@ -1,0 +1,54 @@
+.sk-transparent {
+    color: transparent !important;
+}
+
+.sk-text {
+    background-origin: content-box !important;
+    background-clip: content-box !important;
+    background-color: transparent !important;
+    color: transparent !important;
+    background-repeat: repeat-y !important;
+    background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 86%, transparent 0%) !important;
+    background-size: 100%;
+    position: relative !important;
+}
+
+.sk-button {
+    color: #EFEFEF !important;
+    background: #EFEFEF !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.sk-image {
+    background: #EFEFEF !important;
+}
+
+.sk-pseudo::before,
+.sk-pseudo::after {
+    background: #EFEFEF !important;
+    background-image: none !important;
+    color: transparent !important;
+    border-color: transparent !important;
+}
+
+.sk-pseudo-rect::before,
+.sk-pseudo-rect::after {
+    border-radius: 0 !important;
+}
+
+.sk-pseudo-circle::before,
+.sk-pseudo-circle::after {
+    border-radius: 50% !important;
+}
+
+.sk-container {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000000;
+    background-color: transparent;
+}
