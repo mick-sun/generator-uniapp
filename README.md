@@ -25,7 +25,7 @@ mkdir my-new-project && cd $_
 
 Run `yo uniapp`, optionally passing an app name:
 ```
-yo angular [app-name]
+yo uniapp [app-name]
 ```
 
 Run `yarn` Installation dependency  and `yarn serve` for preview
