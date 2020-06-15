@@ -10,15 +10,22 @@ module.exports = class extends Generator {
 
   writing () {
     let { pageName } = this.options
+    let pathStr = ''
+    if (pageName.includes('/')) {
+      const arr = pageName.split('/')
+      pageName = _.last(arr)
+      pathStr = arr.filter((item, key) => key < arr.length - 1)
+    }
     pageName = _.kebabCase(pageName)
-    this.options.className = pageName
+    this.options.className = _.kebabCase(pageName)
     this.options.componentName = _.upperFirst(_.camelCase(pageName))
     this.fs.copyTpl(
       this.templatePath('page.vue'),
-      this.destinationPath(`src/pages/${pageName}/${pageName}.vue`),
+      this.destinationPath(`src/pages/${pathStr}/${pageName}/${pageName}.vue`),
       this.options
     )
 
+    // Register router to pages.json
     if (this.options.route) {
       const file = this.destinationPath('src/pages.json')
       let page = fs.readFileSync(file, 'utf-8')
@@ -43,7 +50,6 @@ module.exports = class extends Generator {
             navigationBarTitleText: this.options.title ? this.options.title : ''
           }
         })
-        console.log(page)
         fs.writeFileSync(file, JSON.stringify(page, null, 2))
       } catch (e) {
         throw e
