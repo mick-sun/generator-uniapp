@@ -6,6 +6,12 @@
   "repository": "git@github.com:mick-sun/generator-uniapp.git",
   "author": "孙伟 <mick.sunwei@qq.com>",
   "license": "MIT",
+  "keywords": [
+    "Yeoman",
+    "Generator",
+    "uniapp",
+    "Vuejs"
+  ],
   "dependencies": {
     "yeoman-generator": "^4.10.1",
     "yosay": "^2.0.2"
