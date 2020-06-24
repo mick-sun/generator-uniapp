@@ -10,10 +10,11 @@ module.exports = class extends Generator {
   writing () {
     let { componentName } = this.options
     componentName = _.upperFirst(_.camelCase(componentName))
-    this.options.className = _.kebabCase(componentName)
+    const className = _.kebabCase(componentName)
+    this.options.className = className
     this.fs.copyTpl(
       this.templatePath('component.vue'),
-      this.destinationPath(`src/components/${componentName}/${componentName}.vue`),
+      this.destinationPath(`src/components/${className}/${className}.vue`),
       this.options
     )
   }

@@ -35,8 +35,11 @@ module.exports = class extends Generator {
         })
       }
       try {
+        let path = `pages/${pageName}/${pageName}`
+        if (pathStr) {
+          path = `pages/${pathStr}/${pageName}/${pageName}`
+        }
         page = JSON.parse(page)
-        const path = `pages/${pageName}/${pageName}`
         const paths = []
         page.pages.forEach(item => {
           paths.push(item.path)
@@ -45,7 +48,7 @@ module.exports = class extends Generator {
           return this.log.error(`The Path ${path} is already exists`)
         }
         page.pages.push({
-          path: `pages/${pageName}/${pageName}`,
+          path,
           style: {
             navigationBarTitleText: this.options.title ? this.options.title : ''
           }
