@@ -59,7 +59,7 @@ Example:
 yo uniapp:component MyComponent
 ```
 
-Produces `src/components/MyComponent/MyComponent.vue`:
+Produces `src/components/my-component/my-component.vue`:
 ```vue
 <template>
   <view class="my-component"></view>
@@ -175,7 +175,25 @@ export default {
 ### Store
 
 ### Style
+Generates a sass file.
 
+Example:
+```bash
+yo uniapp:style home
+```
+Produces `src/styles/home.scss`:
+```scss
+.home {
+
+}
+```
+Generate the style described above and add it to `src/styles/app.scss` via @import
+```scss
+@import "./iconfont";
+@import "./global";
+@import "./skeleton";
+@import "./home"; // add this line
+```
 ## License
 
 [MIT License](http://opensource.org/licenses/bsd-license.php)
