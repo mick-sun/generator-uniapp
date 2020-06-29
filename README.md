@@ -38,7 +38,6 @@ Available generators:
 * [uniapp](#app) (aka [uniapp:app](#app))
 * [uniapp:component](#component)
 * [uniapp:page](#page)
-* [uniapp:mixin](#mixin)
 * [uniapp:service](#service)
 * [uniapp:store](#store)
 * [uniapp:style](#style)
@@ -168,11 +167,55 @@ export default {
 </style>
 ```
 
-### Mixin
-
 ### Service
+Generates a api service file.
+
+Example:
+```bash
+yo uniapp:service home
+```
+Produces `src/services/home.js`:
+```js
+import request from '@/utils/request'
+
+export function get (params) {
+  return request.get('get-url', params, {
+    // headers config
+  })
+}
+
+export function post (parameter) {
+  return request.post('post-url', parameter, {
+    // headers config
+  })
+}
+```
 
 ### Store
+Generates a Vuex module file.
+
+Example:
+```bash
+yo uniapp:store cart
+```
+Produces `src/store/modules/cart.js`:
+```js
+const cart = {
+  state: {
+
+  },
+  mutations: {
+
+  },
+  actions: {
+
+  }
+}
+
+export default cart
+```
+
+**You need to manually import this file in the appropriate location of index.js**
 
 ### Style
 Generates a sass file.
