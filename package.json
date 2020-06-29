@@ -1,6 +1,6 @@
 {
   "name": "generator-uniapp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Yeoman generator for uniapp",
   "main": "index.js",
   "repository": "git@github.com:mick-sun/generator-uniapp.git",
