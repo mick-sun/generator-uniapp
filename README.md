@@ -168,7 +168,6 @@ export default {
 ```
 
 ### Service
-Generates a api service file.
 创建一个 `api service` 文件
 
 例子:
@@ -193,7 +192,6 @@ export function post (parameter) {
 ```
 
 ### Store
-Generates a Vuex module file.
 创建一个 `Vuex Module` 文件
 
 例子:
