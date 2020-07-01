@@ -1,38 +1,39 @@
 # Uniapp generator [![Gitter](https://img.shields.io/badge/Gitter-Join_the_Yeoman_chat_%E2%86%92-00d06f.svg)](https://gitter.im/yeoman/yeoman)
 
-> 一个基于Yeoman的uniapp项目脚手架生成器 - 使您可以使用合理的默认值和最佳实践快速设置项目。
+> Yeoman generator for uniapp - lets you quickly set up a project with sensible defaults and best practices.
 
-## 使用用法
+## Usage
 
-安装 `yo`, `generator-uniapp`:
+Install `yo`, `generator-uniapp`:
 ```
 npm install -g  yo generator-uniapp
 // or
 yarn add global yo generator-uniapp
 ```
 
-如果您打算使用Sass，则需要首先安装Ruby和Compass：
-- 从[此处](http://rubyinstaller.org/downloads/)下载或使用 `Homebrew` 安装 `Ruby`
-- 使用 `gem` 安装 `compass`:
+If you are planning on using Sass, you will need to first install Ruby and Compass:
+- Install Ruby by downloading from [here](http://rubyinstaller.org/downloads/) or use Homebrew
+- Install the compass gem:
 ```
 gem install compass
 ```
 
-创建一个新目录，并cd进入：
+Make a new directory, and `cd` into it:
 ```
 mkdir my-new-project && cd $_
 ```
 
-运行 `yo uniapp`, 可以选择传递应用名称：
+Run `yo uniapp`, optionally passing an app name:
 ```
 yo uniapp [app-name]
 ```
 
-运行 `yarn` 安装依赖关系并 `yarn serve` 进行预览
+Run `yarn` Installation dependency  and `yarn serve` for preview
+
 
 ## Generators
 
-可用的 generators:
+Available generators:
 
 * [uniapp](#app) (aka [uniapp:app](#app))
 * [uniapp:component](#component)
@@ -42,22 +43,22 @@ yo uniapp [app-name]
 * [uniapp:style](#style)
 
 ### App
-开始一个新的 uniapp 项目，生成项目基础代码，Generator会自动依赖dcloudio和vuejs的一些模块，包括vuex和 [flyio](https://github.com/wendux/fly) 作为默认的请求工具
+Sets up a new uniapp project, generating all the boilerplate you need to get started. The app generator also optionally installs dcloudio and additional Vuejs modules, such as vuex (installed by default). and use [flyio](https://github.com/wendux/fly) for request by default
 
-例子:
+Example:
 ```bash
 yo uniapp
 ```
 
 ### Component
-生成一个全局组建
+Generates a component.
 
-例子:
+Example:
 ```bash
 yo uniapp:component MyComponent
 ```
 
-生成 `src/components/my-component/my-component.vue`:
+Produces `src/components/my-component/my-component.vue`:
 ```vue
 <template>
   <view class="my-component"></view>
@@ -78,14 +79,13 @@ export default {
 ```
 
 ### Page
-生成页面并在 `src/pages.json` 中注册路由
+Generates a page and configures a route in `src/pages.json` connecting them.
 
-
-例子:
+Example:
 ```bash
 yo uniapp:page my-page
 ```
-产生 `src/pages/my-page/my-page.vue`:
+Produces `src/pages/my-page/my-page.vue`:
 ```vue
 <template>
   <view class="my-page"></view>
@@ -110,14 +110,14 @@ export default {
   }
 </style>
 ```
-**通过参数指定是否生成路由和页面标题**
+**Explicitly provide route**
 
 Example:
 ```bash
 yo uniapp:page my-page --route --title="my page"
 ```
 
-产生如上的页面并添加一条路由信息到 `src/pages.json`
+Produces page as above and adds a route to `src/pages.json`
 ```json
 {
   "pages": [
@@ -134,14 +134,14 @@ yo uniapp:page my-page --route --title="my page"
 }
 ```
 
-当然，您也可以指定生成的子目录。
+Of course, you can also specify the generated subdirectories.
 
-例子:
+Example:
 ```bash
 yo uniapp:page user/address --route --title="Address"
 ```
 
-产生 `src/pages/user/address/address.vue`:
+Produces `src/pages/user/address/address.vue`:
 ```vue
 <template>
   <view class="address"></view>
@@ -169,13 +169,12 @@ export default {
 
 ### Service
 Generates a api service file.
-创建一个 `api service` 文件
 
-例子:
+Example:
 ```bash
 yo uniapp:service home
 ```
-产生 `src/services/home.js`:
+Produces `src/services/home.js`:
 ```js
 import request from '@/utils/request'
 
@@ -194,13 +193,12 @@ export function post (parameter) {
 
 ### Store
 Generates a Vuex module file.
-创建一个 `Vuex Module` 文件
 
-例子:
+Example:
 ```bash
 yo uniapp:store cart
 ```
-产生 `src/store/modules/cart.js`:
+Produces `src/store/modules/cart.js`:
 ```js
 const cart = {
   state: {
@@ -217,22 +215,22 @@ const cart = {
 export default cart
 ```
 
-**你需要收到在 `store/index.js` 中去引入这个文件**
+**You need to manually import this file in the appropriate location of index.js**
 
 ### Style
-创建一个样式文件，默认使用SASS
+Generates a sass file.
 
-例子:
+Example:
 ```bash
 yo uniapp:style home
 ```
-产生 `src/styles/home.scss`:
+Produces `src/styles/home.scss`:
 ```scss
 .home {
 
 }
 ```
-生成的样式文件会自动在 `src/styles/app.scss` 中引入
+Generate the style described above and add it to `src/styles/app.scss` via @import
 ```scss
 @import "./iconfont";
 @import "./global";
